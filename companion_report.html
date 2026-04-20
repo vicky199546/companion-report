@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日陪伴聯絡簿 — 陳伯伯 2025.04.20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --coral: #D85A30;
+    --coral-light: #F0997B;
+    --coral-pale: #FFF5F0;
+    --coral-border: #F5C4B3;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --green: #1D9E75;
+    --green-light: #EAF3DE;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --ink: #2C2A25;
+    --ink-mid: #5F5D57;
+    --ink-soft: #8E8C85;
+    --ink-faint: #C8C5BC;
+    --paper: #FDFAF6;
+    --paper-warm: #F8F3EC;
+    --paper-card: #FFFFFF;
+    --border: rgba(44,42,37,0.1);
+    --border-soft: rgba(44,42,37,0.06);
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* subtle paper grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 56px 0 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .header-line {
+    width: 40px;
+    height: 2px;
+    background: var(--coral);
+    margin: 0 auto 24px;
+  }
+
+  .brand {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--coral);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: var(--ink-mid);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+
+  .header-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 16px;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.1s; }
+  .card:nth-child(4) { animation-delay: 0.15s; }
+  .card:nth-child(5) { animation-delay: 0.2s; }
+  .card:nth-child(6) { animation-delay: 0.25s; }
+  .card:nth-child(7) { animation-delay: 0.3s; }
+  .card:nth-child(8) { animation-delay: 0.35s; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  /* ── PROFILE ── */
+  .profile-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--coral-pale);
+    border: 2px solid var(--coral-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .profile-name {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .profile-meta {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+
+  .companion-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--blue);
+    background: var(--blue-light);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  /* ── MOOD ── */
+  .mood-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mood-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--ink);
+    transition: border-color 0.2s;
+  }
+
+  .mood-chip:hover { border-color: var(--coral-light); }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .tl-item {
+    display: flex;
+    gap: 0;
+    position: relative;
+  }
+
+  .tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 72px;
+    flex-shrink: 0;
+  }
+
+  .tl-time {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding-top: 2px;
+    white-space: nowrap;
+  }
+
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+    margin: 8px 0 0;
+    flex-shrink: 0;
+    border: 2px solid var(--paper-card);
+    box-shadow: 0 0 0 1.5px var(--ink-faint);
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .tl-dot.accent {
+    background: var(--coral);
+    box-shadow: 0 0 0 1.5px var(--coral);
+  }
+
+  .tl-line {
+    width: 1px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 4px;
+  }
+
+  .tl-item:last-child .tl-line { display: none; }
+
+  .tl-body {
+    flex: 1;
+    padding: 0 0 24px 20px;
+  }
+
+  .tl-content {
+    background: var(--paper-warm);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.65;
+    border: 1px solid var(--border-soft);
+    transition: border-color 0.2s;
+  }
+
+  .tl-content.featured {
+    background: var(--coral-pale);
+    border-color: var(--coral-border);
+  }
+
+  .tl-content:hover { border-color: var(--ink-faint); }
+  .tl-content.featured:hover { border-color: var(--coral-light); }
+
+  .tl-quote {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--coral);
+    font-style: italic;
+    border-left: 2px solid var(--coral-light);
+    padding-left: 12px;
+    margin: 8px 0 4px;
+    line-height: 1.6;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  .tag-memory { color: var(--amber); background: var(--amber-light); }
+  .tag-exercise { color: #3B6D11; background: var(--green-light); }
+  .tag-out { color: var(--blue); background: var(--blue-light); }
+
+  /* ── HANDWRITTEN NOTE ── */
+  .note-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .note-card::before {
+    content: '"';
+    font-family: var(--serif);
+    font-size: 120px;
+    color: var(--coral-pale);
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .note-text {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.85;
+    position: relative;
+    z-index: 1;
+  }
+
+  .note-sig {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .note-sig::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+
+  /* ── VIDEO ── */
+  .video-wrap {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #0a0a0a;
+    margin-bottom: 10px;
+  }
+
+  .video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .video-caption {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .video-caption::before {
+    content: '🔒';
+    font-size: 12px;
+  }
+
+  /* ── METRICS ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .metric {
+    background: var(--paper-warm);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    text-align: center;
+    border: 1px solid var(--border-soft);
+  }
+
+  .metric-value {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .metric-value.good { color: var(--green); }
+
+  .metric-label {
+    font-size: 12px;
+    color: var(--ink-mid);
+    margin-bottom: 3px;
+  }
+
+  .metric-sub {
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  /* ── HEALTH ── */
+  .health-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .health-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .health-label {
+    font-size: 13px;
+    color: var(--ink-mid);
+  }
+
+  .dot-track { display: flex; gap: 5px; }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+    opacity: 0.4;
+  }
+
+  .dot.filled { background: var(--green); opacity: 1; }
+  .dot.half { background: #FAC775; opacity: 1; }
+
+  .confirmed {
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ── NEXT ── */
+  .next-box {
+    background: var(--coral-pale);
+    border: 1px solid var(--coral-border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .next-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--coral-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .next-box h4 {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: #7A2E14;
+    margin-bottom: 5px;
+  }
+
+  .next-box p {
+    font-size: 13px;
+    color: #993C1D;
+    line-height: 1.6;
+  }
+
+  /* ── SHARE ── */
+  .share-section {
+    text-align: center;
+    padding: 40px 0 20px;
+  }
+
+  .share-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+
+  .share-heading {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .share-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+
+  .share-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-family: var(--sans);
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--paper-card);
+    color: var(--ink);
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  }
+
+  .btn:hover {
+    background: var(--paper-warm);
+    border-color: var(--ink-faint);
+    transform: translateY(-1px);
+  }
+
+  .btn:active { transform: translateY(0); }
+
+  .btn.primary {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #fff;
+  }
+
+  .btn.primary:hover { background: #B84820; border-color: #B84820; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 32px 0 0;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--coral);
+    margin-bottom: 8px;
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-line"></div>
+    <div class="brand">陪你 · 陪伴服務</div>
+    <h1>今日陪伴聯絡簿</h1>
+    <div class="header-sub">爸媽今天過得怎麼樣，我們替你記下來</div>
+    <div class="header-date">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="2" width="11" height="10" rx="2" stroke="#8E8C85" stroke-width="1"/><path d="M4 1v2M9 1v2M1 5h11" stroke="#8E8C85" stroke-width="1" stroke-linecap="round"/></svg>
+      2025年4月20日（日）下午 2:00 – 5:00
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="card">
+    <div class="section-label">本次陪伴對象</div>
+    <div class="profile-row">
+      <div class="avatar">👴</div>
+      <div>
+        <div class="profile-name">陳伯伯</div>
+        <div class="profile-meta">78 歲・台北市大安區</div>
+        <div class="companion-tag">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="#185FA5"/><path d="M6 3v3.5l2 1" stroke="#185FA5" stroke-linecap="round"/></svg>
+          陪伴員：林小涵　第 6 次陪伴
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOOD -->
+  <div class="card">
+    <div class="section-label">今日狀態</div>
+    <div class="mood-row">
+      <div class="mood-chip">😄 心情很好</div>
+      <div class="mood-chip">💬 話多愛分享</div>
+      <div class="mood-chip">🍞 午餐吃完了</div>
+      <div class="mood-chip">🚶 有出門走走</div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="card">
+    <div class="section-label">今日陪伴影片</div>
+    <a href="https://youtu.be/CHy6ZPsdKg8?t=15" target="_blank" rel="noopener" style="display:block; text-decoration:none;">
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden; background:#000; cursor:pointer;">
+        <img src="thumbnail.png"
+             alt="陪伴影片縮圖"
+             style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.85;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
+          <div style="width:64px; height:64px; border-radius:50%; background:rgba(216,90,48,0.92); display:flex; align-items:center; justify-content:center; transition:transform 0.2s;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <polygon points="9,7 19,12 9,17" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+        <div style="position:absolute; bottom:12px; right:14px; background:rgba(0,0,0,0.55); color:#fff; font-size:12px; padding:3px 10px; border-radius:20px; font-family:var(--sans);">點擊於 YouTube 開啟</div>
+      </div>
+    </a>
+    <div class="video-caption" style="margin-top:10px;">影片由陪伴員拍攝，僅供家屬觀看。本影片將於 30 天後自動刪除。</div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="card">
+    <div class="section-label">今日行程紀錄</div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">14:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-content">
+            散步到大安公園，坐在樹下聊了聊以前在鐵路局工作的故事，伯伯很開心，說好久沒有人聽他講這些了。
+            <br><span class="tag tag-memory">回憶分享</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">15:00</div>
+          <div class="tl-dot accent"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-content featured">
+            在附近麵包店喝咖啡，伯伯點了菠蘿麵包——
+            <div class="tl-quote">「這個菠蘿麵包，以前下班回家都會買一個，是女兒最喜歡的點心。」</div>
+            <span class="tag tag-memory">家庭回憶</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">16:00</div>
+          <div class="tl-dot accent"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-content featured">
+            回家後一起做了「打地鼠」手腦協調運動，伯伯很投入，越做越起勁。
+            <br><span class="tag tag-exercise">手腦運動</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">17:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-content">
+            離開前伯伯說「下次早點來」，還拿了兩顆橘子給我帶走。結束陪伴。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTE -->
+  <div class="note-card">
+    <div class="section-label">陪伴員手寫心得</div>
+    <div class="note-text">
+      伯伯今天狀態特別好，我覺得提到鐵路局的時候他眼睛都亮了。他說已經很久沒有人問他年輕時做什麼了。下次我想帶他去騎腳踏車，他說以前很喜歡騎。今天也確認他的藥有準時吃，精神不錯，走路也很穩。
+    </div>
+    <div class="note-sig">林小涵，陪伴員&nbsp;&nbsp;寫於 2025.04.20</div>
+  </div>
+
+  <!-- METRICS -->
+  <div class="card">
+    <div class="section-label">本次陪伴數據</div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-value">3h</div>
+        <div class="metric-label">陪伴時數</div>
+        <div class="metric-sub">本月累計 12h</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">6</div>
+        <div class="metric-label">累計次數</div>
+        <div class="metric-sub">服務滿 2 個月</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value good">佳</div>
+        <div class="metric-label">整體狀態</div>
+        <div class="metric-sub">優 / 佳 / 待關注</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTH -->
+  <div class="card">
+    <div class="section-label">生活觀察紀錄</div>
+    <div class="health-list">
+      <div class="health-item">
+        <div class="health-label">用餐狀況</div>
+        <div class="dot-track">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          <div class="dot half"></div><div class="dot"></div>
+        </div>
+      </div>
+      <div class="health-item">
+        <div class="health-label">走動活力</div>
+        <div class="dot-track">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          <div class="dot filled"></div><div class="dot"></div>
+        </div>
+      </div>
+      <div class="health-item">
+        <div class="health-label">情緒表現</div>
+        <div class="dot-track">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          <div class="dot filled"></div><div class="dot filled"></div>
+        </div>
+      </div>
+      <div class="health-item">
+        <div class="health-label">用藥確認</div>
+        <div class="confirmed">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.5" stroke="#1D9E75"/><path d="M4 7l2 2 4-4" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          已確認
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEXT -->
+  <div class="card">
+    <div class="section-label">下次陪伴預告</div>
+    <div class="next-box">
+      <div class="next-icon">📅</div>
+      <div>
+        <h4>下次陪伴：4 月 27 日（日）下午 2:00</h4>
+        <p>陪伴員林小涵計畫帶伯伯去腳踏車道騎車，請確認伯伯當天的身體狀況，如有調整請提前告知。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARE -->
+  <div class="share-section">
+    <div class="share-eyebrow">分享這份服務</div>
+    <div class="share-heading">覺得安心嗎？</div>
+    <div class="share-sub">把陪你介紹給也有同樣需求的家庭</div>
+    <div class="share-btns">
+      <a class="btn primary" href="#">分享給家人</a>
+      <a class="btn" href="#">推薦給朋友</a>
+      <a class="btn" href="#">儲存紀錄</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">陪你</div>
+    <div class="footer-note">
+      影片與紀錄均加密儲存，僅限授權家屬查閱。<br>
+      如有任何問題，請聯繫您的專屬服務管家。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
